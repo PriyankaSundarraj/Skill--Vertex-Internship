@@ -10,6 +10,7 @@ Original file is located at
 #!pip install streamlit
 import streamlit as st
 import pandas as pd
+pip install xgboost
 from xgboost import XGBRegressor
 import joblib
 
