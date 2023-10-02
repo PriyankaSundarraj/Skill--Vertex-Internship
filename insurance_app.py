@@ -13,7 +13,7 @@ import pandas as pd
 from xgboost import XGBRegressor
 import joblib
 
-model_path = model_path = r'C:\Users\Admin\Final_Major_Prediction\final_model.pkl'
+model_path = model_path = r'C:\Users\Admin\Final_Major_Prediction'
 # Replace with the actual path
 model = joblib.load(model_path)
 
