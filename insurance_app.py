@@ -18,8 +18,6 @@ model_path = model_path = r'final_model.pkl'
 # Replace with the actual path
 model = joblib.load(model_path)
 
-# Set the locale to Indian English
-locale.setlocale(locale.LC_ALL, 'en_IN')
 
 # Define custom CSS style for attribution
 custom_css = """
@@ -54,12 +52,13 @@ def main():
     input_data = pd.DataFrame({'age': [age], 'bmi': [bmi], 'children': [children], 'smoker': [smoker]})
 
     # Predict insurance charges
-    currency_symbol = st.selectbox('Select Currency Symbol', ['$', '₹'])  # Dropdown for currency selection
+    currency_symbol = st.selectbox('Select Currency Symbol', ['$', '₹'])
 
     if st.button('Predict'):
         prediction = model.predict(input_data)
         formatted_prediction = f'Predicted Insurance Charges: {currency_symbol}{prediction[0]:.2f}'
         st.write(formatted_prediction)
+
     
 
    # Add the attribution with custom formatting
