@@ -14,7 +14,7 @@ import pandas as pd
 from xgboost import XGBRegressor
 import joblib
 
-model_path = model_path = r'/workspaces/Skill--Vertex-Internship/final_model.pkl'
+model_path = model_path = r'final_model.pkl'
 # Replace with the actual path
 model = joblib.load(model_path)
 
