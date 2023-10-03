@@ -24,6 +24,7 @@ def main():
     # Set the title and description
     st.title('Health Insurance Charges Prediction App')
     st.write('This app predicts health insurance charges based on user input.')
+    
 
     # Create input fields for user data
     age = st.slider('Age', 18, 64, 30)
@@ -41,6 +42,16 @@ def main():
     if st.button('Predict'):
         prediction = model.predict(input_data)
         st.write(f'Predicted Insurance Charges: ${prediction[0]:.2f}')
+    
+
+    # Add the attribution with custom formatting
+    st.markdown(
+        """
+        **Created by Priyanka S**
+        """,
+        unsafe_allow_html=True
+    )
+
 
 if __name__ == '__main__':
     main()
