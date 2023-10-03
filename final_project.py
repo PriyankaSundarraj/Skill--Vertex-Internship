@@ -20,9 +20,6 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.subplots as sp
 import plotly.graph_objs as go
-import pandas as pd
-import numpy as np
-import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import r2_score
