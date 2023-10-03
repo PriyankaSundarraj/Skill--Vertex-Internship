@@ -52,7 +52,7 @@ def main():
     input_data = pd.DataFrame({'age': [age], 'bmi': [bmi], 'children': [children], 'smoker': [smoker]})
 
     # Predict insurance charges
-    currency_symbol = st.selectbox('Select Currency Symbol', ['$', '₹'])
+      currency_symbol = '₹'  # Set the currency symbol to Indian Rupees
 
     if st.button('Predict'):
         prediction = model.predict(input_data)
