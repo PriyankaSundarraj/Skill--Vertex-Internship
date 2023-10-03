@@ -18,6 +18,21 @@ model_path = model_path = r'final_model.pkl'
 # Replace with the actual path
 model = joblib.load(model_path)
 
+# Set the locale to Indian English
+locale.setlocale(locale.LC_ALL, 'en_IN')
+
+# Define custom CSS style for attribution
+custom_css = """
+    <style>
+        .attribution {
+            font-size: 18px;
+            color: #3366ff; /* Blue color */
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+"""
+
 
 # Define the Streamlit app
 def main():
@@ -39,15 +54,20 @@ def main():
     input_data = pd.DataFrame({'age': [age], 'bmi': [bmi], 'children': [children], 'smoker': [smoker]})
 
     # Predict insurance charges
+    currency_symbol = st.selectbox('Select Currency Symbol', ['$', '₹'])  # Dropdown for currency selection
+
     if st.button('Predict'):
         prediction = model.predict(input_data)
-        st.write(f'Predicted Insurance Charges: ${prediction[0]:.2f}')
+        formatted_prediction = f'Predicted Insurance Charges: {currency_symbol}{prediction[0]:.2f}'
+        st.write(formatted_prediction)
     
 
-    # Add the attribution with custom formatting
+   # Add the attribution with custom formatting
     st.markdown(
         """
-        **Created by Priyanka S**
+        <div style="text-align:center; font-size: 24px; color: #ff5733; font-weight: bold;">
+            Created by Priyanka S
+        </div>
         """,
         unsafe_allow_html=True
     )
