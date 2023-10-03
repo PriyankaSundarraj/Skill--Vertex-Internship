@@ -65,7 +65,7 @@ def main():
     st.markdown(
         """
         <div style="text-align:center; font-size: 24px; color: #ff5733; font-weight: bold;">
-            Created by Priyanka S
+            Created by Priyanka Sundarraj
         </div>
         """,
         unsafe_allow_html=True
